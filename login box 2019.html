@@ -1,0 +1,65 @@
+<html>
+
+<head>
+<title>
+Login Page
+</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+
+  
+<h2 style="text-align: center;"><u>Username &amp; Password Login</u></h2>
+
+<p style="text-align: center;">Please fill out your username along with your 8 character password.</p>
+
+<center>
+  <form action="/action_page.php">
+    <label for="usrname">Username</label>
+    <input type="text" id="usrname" name="usrname" required>
+	<label for="password">Password</label>
+	   <input type="text" id="password" name="password" required>
+	   </center>
+<p>&nbsp;</p>
+<center>
+    <input type="submit" value="Submit">
+	
+	<button id=click-me>Click me</button>
+  </form>
+</div>
+</center>
+</body>
+
+
+<script>
+	var count = 0;
+	$("#click-me").on("click", function() {
+		++count;
+		//alert('Clicked ' + count + ' times');
+		
+		let username = $('#usrname').val();
+		console.log(username);
+		
+		if (username === '') {
+			alert('Cannot be blank');
+		}
+	})
+</script>
+
+<script>
+	$("#click-me").on("click", function() {
+		let password = $('#password').val();
+		
+		if (password.length < 8) {
+			alert('Password must be > 8');
+		}
+	});
+</script>
+	
+</html>
